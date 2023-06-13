@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tempo Bootstrap Template - Index</title>
+  <title>jobportal</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -15,6 +15,25 @@
   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="path/to/fontawesome.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -28,6 +47,10 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
   <style>
+    *{
+      margin:0;
+      padding:3px;
+    }
     .btn {
       border-radius: 4px;
       background-color: #f4511e;
@@ -66,7 +89,524 @@
       opacity: 1;
       right: 0;
     }
-    </style>
+ 
+
+    .category .card-container {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      display: grid;
+      text-align: center;
+      justify-content: center;
+      left:30px;                  
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+    
+    .category.card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      width: 40%;
+      text-align: center;
+      box-sizing: border-box;
+      
+      
+    }
+    
+    .category.card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    .category .card:hover i:after {
+      opacity: 1;
+      right: 0;
+    }
+    {% comment %} .vl {
+      border-left: 3px solid blue;
+      height: 160px;
+      position: absolute;
+      left: 80%;
+      margin-left: -3px;
+      top: 5px;
+    }
+     {% endcomment %}
+    .jobsweek .icon-box {
+      text-align: center;
+      background: #fff;
+      box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
+      padding: 50px 10px;
+      transition: all ease-in-out 0.3s;
+    }
+    .jobsweek .icon-box .icon {
+      margin: 0 auto;
+      width: 64px;
+      height: 64px;
+      background: blue;
+      border-radius: 5px;
+      transition: all 0.3s ease-out 0s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transform-style: preserve-3d;
+      position: relative;
+      z-index: 2;
+    }
+    .jobsweek..icon-box .icon i {
+      color: #fff;
+      font-size: 28px;
+    }
+    .jobsweek.icon-box .icon::before {
+      position: absolute;
+      content: "";
+      left: -8px;
+      top: -8px;
+      height: 100%;
+      width: 100%;
+      background: #f9c6bb;
+      border-radius: 5px;
+      transition: all 0.3s ease-out 0s;
+      transform: translateZ(-1px);
+      z-index: 1;
+    }
+    .jobsweek .icon-box h4 {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+    .jobsweek .icon-box h4 a {
+      color: #0b2341;
+    }
+    .jobsweek .icon-box p {
+      line-height: 24px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    .jobsweek .icon-box:hover {
+      background: #1ee4eb;
+      border-color: #1ee4eb;
+    }
+    .jobsweek .icon-box:hover .icon {
+      background: #fff;
+    }
+    .jobsweek .icon-box:hover .icon i {
+      color: #ed502e;
+    }
+    .jobsweek .icon-box:hover .icon::before {
+      background: #f1775d;
+    }
+    .jobsweek .icon-box:hover h4 a,
+    .jobsweek.icon-box:hover p {
+      color: #fff;
+    }
+    .account {
+      padding-top: 0;
+    }
+    
+    .account .count-box {
+      box-shadow: -10px -5px 40px 0 rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 100%;
+    }
+    
+    .account .count-box i {
+      display: block;
+      font-size: 30px;
+      color: #ed502e;
+      float: left;
+    }
+    
+    .account .count-box span {
+      font-size: 42px;
+      line-height: 24px;
+      display: block;
+      font-weight: 700;
+      color: #0b2341;
+      margin-left: 50px;
+    }
+    
+    .account .count-box p {
+      padding: 30px 0 0 0;
+      margin: 0;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+    }
+    
+    .account .count-box a {
+      font-weight: 600;
+      display: block;
+      margin-top: 20px;
+      color: #164682;
+      font-size: 15px;
+      font-family: "Poppins", sans-serif;
+      transition: ease-in-out 0.3s;
+    }
+    
+    .account .count-box a:hover {
+      color: #2169c4;
+    }
+    .testimonials .testimonial-wrap {
+      padding-left: 50px;
+    }
+    
+    .testimonials .testimonials-carousel,
+    .testimonials .testimonials-slider {
+      overflow: hidden;
+    }
+    
+    .testimonials .testimonial-item {
+      box-sizing: content-box;
+      padding: 30px 30px 30px 60px;
+      margin: 30px 15px;
+      min-height: 200px;
+      box-shadow: 0px 0px 20px 0px rgba(11, 35, 65, 0.1);
+      position: relative;
+      background: #fff;
+    }
+    
+    .testimonials .testimonial-item .testimonial-img {
+      width: 90px;
+      border-radius: 10px;
+      border: 6px solid #fff;
+      position: absolute;
+      left: -45px;
+    }
+    
+    .testimonials .testimonial-item h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0 5px 0;
+      color: #111;
+    }
+    
+    .testimonials .testimonial-item h4 {
+      font-size: 14px;
+      color: #999;
+      margin: 0;
+    }
+    
+    .testimonials .testimonial-item .quote-icon-left,
+    .testimonials .testimonial-item .quote-icon-right {
+      color: #fdedea;
+      font-size: 26px;
+    }
+    
+    .testimonials .testimonial-item .quote-icon-left {
+      display: inline-block;
+      left: -5px;
+      position: relative;
+    }
+    
+    .testimonials .testimonial-item .quote-icon-right {
+      display: inline-block;
+      right: -5px;
+      position: relative;
+      top: 10px;
+    }
+    
+    .testimonials .testimonial-item p {
+      font-style: italic;
+      margin: 15px auto 15px auto;
+    }
+    
+    .testimonials .swiper-pagination {
+      margin-top: 20px;
+      position: relative;
+    }
+    
+    .testimonials .swiper-pagination .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      opacity: 1;
+      border: 1px solid #ed502e;
+    }
+    
+    .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+      background-color: #ed502e;
+    }
+    .contact .info {
+      border-top: 3px solid #5cb874;
+      border-bottom: 3px solid #5cb874;
+      padding: 30px;
+      background: #fff;
+      width: 100%;
+      box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+    }
+    
+    .contact .info i {
+      font-size: 20px;
+      color: #5cb874;
+      float: left;
+      width: 44px;
+      height: 44px;
+      background: #eaf6ed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .contact .info h4 {
+      padding: 0 0 0 60px;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #222222;
+    }
+    
+    .contact .info p {
+      padding: 0 0 10px 60px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #555555;
+    }
+    
+    .contact .info .social-links {
+      padding-left: 60px;
+    }
+    
+    .contact .info .social-links a {
+      font-size: 18px;
+      display: inline-block;
+      background: #333;
+      color: #fff;
+      line-height: 1;
+      padding: 8px 0;
+      border-radius: 50%;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+      margin-right: 10px;
+    }
+    
+    .contact .info .social-links a:hover {
+      background: #5cb874;
+      color: #fff;
+    }
+    
+    .contact .info .email:hover i,
+    .contact .info .address:hover i,
+    .contact .info .phone:hover i {
+      background: #5cb874;
+      color: #fff;
+    }
+    
+    .contact .php-email-form {
+      width: 100%;
+      border-top: 3px solid #5cb874;
+      border-bottom: 3px solid #5cb874;
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+    }
+    
+    .contact .php-email-form .form-group {
+      padding-bottom: 8px;
+    }
+    
+    .contact .php-email-form .error-message {
+      display: none;
+      color: #fff;
+      background: #ed3c0d;
+      text-align: left;
+      padding: 15px;
+      font-weight: 600;
+    }
+    
+    .contact .php-email-form .error-message br+br {
+      margin-top: 25px;
+    }
+    
+    .contact .php-email-form .sent-message {
+      display: none;
+      color: #fff;
+      background: #18d26e;
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+    }
+    
+    .contact .php-email-form .loading {
+      display: none;
+      background: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+    
+    .contact .php-email-form .loading:before {
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      margin: 0 10px -6px 0;
+      border: 3px solid #18d26e;
+      border-top-color: #eee;
+      animation: animate-loading 1s linear infinite;
+    }
+    
+    .contact .php-email-form input,
+    .contact .php-email-form textarea {
+      border-radius: 0;
+      box-shadow: none;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+    
+    .contact .php-email-form input:focus,
+    .contact .php-email-form textarea:focus {
+      border-color: #5cb874;
+    }
+    
+    .contact .php-email-form input {
+      height: 44px;
+    }
+    
+    .contact .php-email-form textarea {
+      padding: 10px 12px;
+    }
+    
+    .contact .php-email-form button[type=submit] {
+      background: #5cb874;
+      border: 0;
+      padding: 10px 24px;
+      color: #fff;
+      transition: 0.4s;
+      border-radius: 4px;
+    }
+    
+    .contact .php-email-form button[type=submit]:hover {
+      background: #6ec083;
+    }
+    
+    @keyframes animate-loading {
+      0% {
+        transform: rotate(0deg);
+      }
+    
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    /*--------------------------------------------------------------
+    # Breadcrumbs
+    --------------------------------------------------------------*/
+    .breadcrumbs {
+      padding: 15px 0;
+      background: #fbfbfb;
+      min-height: 40px;
+    }
+    
+    @media (max-width: 992px) {
+      .breadcrumbs {
+        margin-top: 66px;
+      }
+    }
+    
+    .breadcrumbs h2 {
+      font-size: 28px;
+      font-weight: 300;
+    }
+    
+    .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+    
+    .breadcrumbs ol li+li {
+      padding-left: 10px;
+    }
+    
+    .breadcrumbs ol li+li::before {
+      display: inline-block;
+      padding-right: 10px;
+      color: #3c3c3c;
+      content: "/";
+    }
+    
+    @media (max-width: 768px) {
+      .breadcrumbs .d-flex {
+        display: block !important;
+      }
+    
+      .breadcrumbs ol {
+        display: block;
+      }
+    
+      .breadcrumbs ol li {
+        display: inline-block;
+      }
+    }
+    
+    /*--------------------------------------------------------------
+    # Footer
+    --------------------------------------------------------------*/
+    #footer {
+      background: #090909;
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      padding: 30px 0;
+    }
+    
+    #footer h3 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      position: relative;
+      font-family: "Poppins", sans-serif;
+      padding: 0;
+      margin: 0 0 15px 0;
+    }
+    
+    #footer p {
+      font-size: 15;
+      font-style: italic;
+      padding: 0;
+      margin: 0 0 40px 0;
+    }
+    
+    #footer .social-links {
+      margin: 0 0 40px 0;
+    }
+    
+    #footer .social-links a {
+      font-size: 18px;
+      display: inline-block;
+      background: #5cb874;
+      color: #fff;
+      line-height: 1;
+      padding: 8px 0;
+      margin-right: 4px;
+      border-radius: 50%;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+    }
+    
+    #footer .social-links a:hover {
+      background: #449d5b;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    #footer .copyright {
+      margin: 0 0 5px 0;
+    }
+    
+    #footer .credits {
+      font-size: 13px;
+    }
+   
+    
+
+  </style>
 
 
 </head>
@@ -87,11 +627,11 @@
           <li><a class="nav-link scrollto" href="#about">Browse Job</a></li>
           <li><a class="nav-link scrollto" href="#services">Canidates</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Contact</a></li>
-          <button class="btn btn-danger"><span>Post A Job</span></button>
-          <button class="btn btn-danger"><span>Want A Job</span></button>
+          <button class="btn btn-danger"><span><strong>Post A Job</strong></span></button>
+          <button class="btn btn-danger"><span><strong>Want A Job</strong></span></button>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
+        </nav>
     </div>
   </header>
   <section id="hero">
@@ -99,12 +639,535 @@
       <h3>Welcome to <strong>Job Portal</strong></h3>
       <h1>Way to Get Your New Job !</h1>
       <h2>Find Job, Employment, and Career Opportunities.</h2>
-      
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
-      
+      <a href="#about" class="btn-get-started scrollto">Get Started</a> 
+    <div>
+  </section>
+  <section id="category" class="category" >
+    <div class="container">
+      <div class="section-title">
+        <h1>Top Category</h1>
+        <h5>Job Categories</h5>
+      </div>
+      <div class=" category card-container">
+        <div class="row  g-3 ">
+          <div class='col d-flex justify-content-center'>
+            <div class="card  " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center> <i class="fa fa-duotone fa-laptop-code fa-beat" style="font-size:30px;color:blue;"></i></center>
+                  <h3>Web Designer</h3>
+                  <p>143   Post Now</p>
+                </div>
+              </div>
+            </div>
+            <div class='col  d-flex justify-content-center'>
+          
+            <div class="card " style="width: 15rem;height:13rem">
+              <div cla  ss="card-body">
+                <center><i class="fa-sharp fa-solid fa-code fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Web Development</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div> 
+          </div> 
+          <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa-solid fa-graduation-cap fa-beat" style="font-size:30px; color:blue;"></i></center>
+                <h3>Education & Training</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div> 
+          </div>
+          <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa-solid fa-hotel fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Hotel Management</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div>  
+          </div>
+          <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa-brands fa-php fa-beat"  style="font-size:30px;color:blue;"></i></center>
+                <h3>PHP Programming</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div>  
+          </div>
+          <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa-solid fa-palette fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Graphic Designer</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div> 
+          </div>
+          <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa-sharp fa-solid fa-user-tie fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Project Manegement</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div>  
+          </div>
+          <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa-sharp fa-solid fa-headphones fa-beat"  style="font-size:30px;color:blue;"></i></center>
+                <h3>Customer Service</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div>
+          </div>
+          <div class='col d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa-sharp fa-solid fa-stethoscope fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Health & Care</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div> 
+          </div>
+          <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa-solid fa-share-from-square fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Social Media</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div>  
+          </div>
+          <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa  fa-regular fa-hand-holding-dollar fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Management</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div>
+          </div>
+          <div class='col d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa fa-solid fa-briefcase fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Marketing & Sale</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div>  
+          </div>
+          <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body"> 
+                <center><i class="fa-solid fa-comments fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Advertising</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div>
+          </div>
+          <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa-solid fa-person-running fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Animation</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div> 
+          </div>
+            <div class='col  d-flex justify-content-center'>
+            <div class="card " style="width: 15rem;height:13rem">
+              <div class="card-body">
+                <center><i class="fa-solid fa-pen-nib fa-beat" style="font-size:30px;color:blue;"></i></center>
+                <h3>Writing</h3>
+                <p>143 Post Now</p>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="jobsweek" class="jobsweek" style="background-color:#F0F8FF" >
+    <div class="container" >
+      <div class="section-title">
+        <h1>Jobs Posts For This Week</h1>
+        <h5>Recently Added Jobs</h5>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box" style="height:300px;width:600px;">
+            
+            <h4><a href="">Web Developer</a></h4>
+            <p><i class="fa-solid fa-building" style="color:blue;"></i>Techwefare<br>
+                <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
+                <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
+                <p>12K-25K-Full Time</p>
+                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box" style="height:300px;width:600px;">
+            
+            <h4><a href="">Web Developer</a></h4>
+            <p><i class="fa-solid fa-building" style="color:blue;"></i>Techwefare<br>
+                <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
+                <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
+                <p>12K-25K-Full Time</p>
+                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box" style="height:300px;width:600px;">
+            
+            <h4><a href="">Web Developer</a></h4>
+            <p><i class="fa-solid fa-building" style="color:blue;"></i>Techwefare<br>
+                <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
+                <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
+                <p>12K-25K-Full Time</p>
+                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box" style="height:300px;width:600px;">
+            
+            <h4><a href="">Web Developer</a></h4>
+            <p><i class="fa-solid fa-building" style="color:blue;"></i>Techwefare<br>
+                <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
+                <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
+                <p>12K-25K-Full Time</p>
+                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box" style="height:300px;width:600px;">
+            
+            <h4><a href="">Web Developer</a></h4>
+            <p><i class="fa-solid fa-building" style="color:blue;"></i>Techwefare<br>
+                <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
+                <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
+                <p>12K-25K-Full Time</p>
+                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box" style="height:300px;width:600px;">
+            
+            <h4><a href="">Web Developer</a></h4>
+            <p><i class="fa-solid fa-building" style="color:blue;"></i>Techwefare<br>
+                <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
+                <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
+                <p>12K-25K-Full Time</p>
+                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+          </div>
+        </div>
+    
+
+      </div>
+      <section id="account" class="account">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row no-gutters">
+  
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="fa-solid fa-user-lock"></i>
+                <h4>Create an Account</h4>
+                <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                      <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                          <i class="fas fa-user prefix grey-text"></i>
+                          <input type="text" id="orangeForm-name" name="name" class="form-control validate">
+                          <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
+                        </div>
+                        <div class="md-form mb-5">
+                          <i class="fas fa-envelope prefix grey-text"></i>
+                          <input type="email"  id="orangeForm-email" name="email" class="form-control validate">
+                          <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+                        </div>
+
+                        <div class="md-form mb-4">
+                          <i class="fas fa-lock prefix grey-text"></i>
+                          <input type="password" id="orangeForm-pass" name="password" class="form-control validate">
+                          <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+                        </div>
+
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                          <button class="btn btn-deep-orange">Sign up</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="text-center">
+                    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Register</a>
+                  </div>
+               
+                                  
+                
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                <h4>Search Jobs</h4>
+                {% comment %} <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> {% endcomment %}
+                <div class="text-center">
+                  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal">Search a Job</a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="fa fa-thin fa-hand-point-up"></i>
+                <h3>Apply</h3>
+                {% comment %} <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> {% endcomment %}
+                <div class="text-center">
+                  <a href="" class="btn btn-default btn-rounded mb-4">Apply </a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="fa fa-duotone fa-graduation-cap"></i>
+                <h3>Top Careers</h3>
+                {% comment %} <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> {% endcomment %}
+                <a href="#">Click Here &raquo;</a>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section>
+
+  <section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h1>Happy Clients</h1>
+        <h3>Testimonials</h3>
+      </div>
+
+      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
 
     </div>
   </section>
+  <section id="download" class="download">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h1>Download Our Best Apps.</h1>
+        
+      </div>
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="{% static 'images/app.jpg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+          
+          <p class="sans-serif">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua.Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <div class="row g-8 pt-5">
+            <a class="btn btn-primary" href="#" role="button"><i class="fa-brands fa-apple" style="font-size:25px;"></i><strong>Download</strong></a>
+            <a class="btn btn-primary" href="#" role="button"><i class="fa-brands fa-android" style="font-size:25px;"></i><strong>Download</strong></a>
+          </div>
+          
+         
+        </div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h1>Contact Us</h1>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>1st Floor - Thapasya Building Infopark,
+              Kakkanad, Cochin</p>
+          </div>
+
+          <div class="email">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>Info@Altostechnologies.In</p>
+          </div>
+
+          <div class="phone">
+            <i class="bi bi-phone"></i>
+            <h4>Call:</h4>
+            <p>+91 974 663 2202</p>
+          </div>
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251482.7098221955!2d76.16084684787937!3d9.98234276321337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d514abec6bf%3A0xbd582caa5844192!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1675309378249!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+        </div>
+
+      </div>
+
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="name">Your Name</label>
+              <input type="text" name="name" class="form-control" id="name" required>
+            </div>
+            <div class="form-group col-md-6 mt-3 mt-md-0">
+              <label for="name">Your Email</label>
+              <input type="email" class="form-control" name="email" id="email" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <label for="name">Subject</label>
+            <input type="text" class="form-control" name="subject" id="subject" required>
+          </div>
+          <div class="form-group mt-3">
+            <label for="name">Message</label>
+            <textarea class="form-control" name="message" rows="10" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="container">
+  <h3>Job Portal</h3>
+  <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+  <div class="social-links">
+    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+  </div>
+  <div class="copyright">
+    &copy; Copyright <strong><span>jobportal</span></strong>. All Rights Reserved
+  </div>
+ 
+</div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
   <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
