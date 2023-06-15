@@ -197,7 +197,7 @@
       color: #fff;
     }
     .account {
-      padding-top: 0;
+      padding-top: 30;
     }
     
     .account .count-box {
@@ -233,7 +233,7 @@
       font-weight: 600;
       display: block;
       margin-top: 20px;
-      color: #164682;
+      color: white;
       font-size: 15px;
       font-family: "Poppins", sans-serif;
       transition: ease-in-out 0.3s;
@@ -323,8 +323,8 @@
       background-color: #ed502e;
     }
     .contact .info {
-      border-top: 3px solid #5cb874;
-      border-bottom: 3px solid #5cb874;
+      border-top: 3px solid #f4511e;
+      border-bottom: 3px solid #f4511e;
       padding: 30px;
       background: #fff;
       width: 100%;
@@ -393,8 +393,8 @@
     
     .contact .php-email-form {
       width: 100%;
-      border-top: 3px solid #5cb874;
-      border-bottom: 3px solid #5cb874;
+      border-top: 3px solid #f4511e;
+      border-bottom: 3px solid #f4511e;
       padding: 30px;
       background: #fff;
       box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
@@ -467,7 +467,7 @@
     }
     
     .contact .php-email-form button[type=submit] {
-      background: #5cb874;
+      background: #f4511e;
       border: 0;
       padding: 10px 24px;
       color: #fff;
@@ -805,7 +805,7 @@
                 <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
                 <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
                 <p>12K-25K-Full Time</p>
-                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+                <a href="{% url 'applyjob' %}" class="btn btn-default btn-rounded mb-4">Apply Now</a>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -816,7 +816,7 @@
                 <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
                 <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
                 <p>12K-25K-Full Time</p>
-                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+                <a href="{% url 'applyjob' %}" class="btn btn-default btn-rounded mb-4">Apply Now</a>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -827,7 +827,7 @@
                 <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
                 <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
                 <p>12K-25K-Full Time</p>
-                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+                <a href="{% url 'applyjob' %}" class="btn btn-default btn-rounded mb-4">Apply Now</a>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -838,7 +838,7 @@
                 <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
                 <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
                 <p>12K-25K-Full Time</p>
-                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+                <a href="{% url 'applyjob' %}" class="btn btn-default btn-rounded mb-4">Apply Now</a>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -849,7 +849,7 @@
                 <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
                 <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
                 <p>12K-25K-Full Time</p>
-                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+                <a href="{% url 'applyjob' %}" class="btn btn-default btn-rounded mb-4">Apply Now</a>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -860,7 +860,7 @@
                 <i class="fa-sharp fa-solid fa-location-dot" style="color:blue;"></i>Kochi<br>
                 <i class="fa-solid fa-tag" style="color:blue;"></i>HTML,CSS,PYTHON</p> 
                 <p>12K-25K-Full Time</p>
-                <button type="button" class="btn  slds-text-align_right " >Apply Now</button>
+                <a href="{% url 'applyjob' %}" class="btn btn-default btn-rounded mb-4">Apply Now</a>
           </div>
         </div>
     
@@ -922,21 +922,22 @@
             <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
               <div class="count-box">
                 <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-                <h4>Search Jobs</h4>
-                {% comment %} <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> {% endcomment %}
+                <h4>Search a Jobs</h4>
+                
                 <div class="text-center">
-                  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal">Search a Job</a>
+                  <a href="{% url 'searchjob' %}" class="btn btn-default btn-rounded mb-4" >Search A Job</a>
                 </div>
+                {% comment %} <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> {% endcomment %}
               </div>
+
             </div>
-  
             <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
               <div class="count-box">
                 <i class="fa fa-thin fa-hand-point-up"></i>
                 <h3>Apply</h3>
                 {% comment %} <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> {% endcomment %}
                 <div class="text-center">
-                  <a href="" class="btn btn-default btn-rounded mb-4">Apply </a>
+                  <a href="{% url 'applyjob' %}" class="btn btn-default btn-rounded mb-4">Apply </a>
                 </div>
               </div>
             </div>
@@ -946,11 +947,14 @@
                 <i class="fa fa-duotone fa-graduation-cap"></i>
                 <h3>Top Careers</h3>
                 {% comment %} <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> {% endcomment %}
-                <a href="#">Click Here &raquo;</a>
+                <div class="text-center">
+                  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Click Here</a>
+                </div>
               </div>
             </div>
   
           </div>
+          
   
         </div>
       </section>

@@ -51,6 +51,10 @@
       margin:0;
       padding:3px;
     }
+
+        
+
+    
     #header {
       background: black;
       transition: all 0.5s;
@@ -321,10 +325,9 @@
     }
     
 
-    .btn {
+    .navbar .btn {
       border-radius: 4px;
       background-color: #f4511e;
-      border: none;
       color: #FFFFFF;
       text-align: center;
       font-size: 15px;
@@ -335,14 +338,14 @@
       margin: 5px;
     }
     
-    .btn span {
+    .navbar .btn span {
       cursor: pointer;
       display: inline-block;
       position: relative;
       transition: 0.5s;
     }
     
-    .btn span:after {
+    .navbar .btn span:after {
       content: '\00bb';
       position: absolute;
       opacity: 0;
@@ -351,14 +354,191 @@
       transition: 0.5s;
     }
     
-    .btn:hover span {
+    .navbar .btn:hover span {
       padding-right: 25px;
     }
     
-    .btn:hover span:after {
+    .navbar .btn:hover span:after {
       opacity: 1;
       right: 0;
     }
+    
+    .search .form-row{
+        padding:100px;
+    }
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    .form-inline {  
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+    }
+    
+    .form-inline label {
+      margin: 5px 10px 5px 0;
+    }
+    
+    .form-inline input {
+      vertical-align: middle;
+      margin: 5px 10px 5px 0;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+    
+    .form-inline button {
+      padding: 10px 20px;
+      background-color: dodgerblue;
+      border: 1px solid #ddd;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .form-inline button:hover {
+      background-color: royalblue;
+    }
+    
+    @media (max-width: 800px) {
+      .form-inline input {
+        margin: 10px 0;
+      }
+      
+      .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+    .main-container {
+      padding: 5px;
+    }
+    
+    /* HEADING */
+    
+    .heading {
+      text-align: center;
+    }
+    
+    .heading__title {
+      font-weight: 600;
+    }
+    
+    .heading__credits {
+      margin: 10px 0px;
+      color: #888888;
+      font-size: 25px;
+      transition: all 0.5s;
+    }
+    
+    .heading__link {
+      text-decoration: none;
+    }
+    
+    .heading__credits .heading__link {
+      color: inherit;
+    }
+    
+    /* CARDS */
+    
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .card {
+      margin: 20px;
+      padding: 20px;
+      width: 500px;
+      min-height: 200px;
+      display: grid;
+      grid-template-rows: 20px 50px 1fr 50px;
+      border-radius: 10px;
+      box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+      transition: all 0.2s;
+    }
+    
+    .card:hover {
+      box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+      transform: scale(1.01);
+    }
+    
+    .card__link,
+    .card__exit,
+    .card__icon {
+      position: relative;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .card__link::after {
+      position: absolute;
+      top: 25px;
+      left: 0;
+      content: "";
+      width: 0%;
+      height: 3px;
+      background-color: rgba(255, 255, 255, 0.6);
+      transition: all 0.5s;
+    }
+    
+    .card__link:hover::after {
+      width: 100%;
+    }
+    
+    .card__exit {
+      grid-row: 1/2;
+      justify-self: end;
+    }
+    
+    .card__icon {
+      grid-row: 2/3;
+      font-size: 30px;
+    }
+    
+    .card__title {
+      grid-row: 3/4;
+      font-weight: 400;
+      color: #ffffff;
+    }
+    
+    .card__apply {
+      grid-row: 4/5;
+      align-self: center;
+    }
+    
+    /* CARD BACKGROUNDS */
+    
+    .card-1 {
+      background: radial-gradient(#1fe4f5, #3fbafe);
+    }
+    
+    .card-2 {
+      background: radial-gradient(#fbc1cc, #fa99b2);
+    }
+    
+    .card-3 {
+      background: radial-gradient(#76b2fe, #b69efe);
+    }
+    
+    .card-4 {
+      background: radial-gradient(#60efbc, #58d5c9);
+    }
+    
+    .card-5 {
+      background: radial-gradient(#f588d8, #c0a3e5);
+    }
+    
+    /* RESPONSIVE */
+    
+    @media (max-width: 1600px) {
+      .cards {
+        justify-content: center;
+      }
+    }
+    
+    
+    
  
 
     .category .card-container {
@@ -812,10 +992,6 @@
         display: inline-block;
       }
     }
-    
-    /*--------------------------------------------------------------
-    # Footer
-    --------------------------------------------------------------*/
     #footer {
       background: #090909;
       color: #fff;
@@ -873,8 +1049,6 @@
     #footer .credits {
       font-size: 13px;
     }
-   
-    
 
   </style>
 
@@ -894,9 +1068,9 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Browse Job</a></li>
-          <li><a class="nav-link scrollto" href="#services">Canidates</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}">Browse Job</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}">Canidates</a></li>
+          <li><a class="nav-link scrollto " href="{% url 'index' %}">Contact</a></li>
           <button class="btn btn-danger"><span><strong>Post A Job</strong></span></button>
           <button class="btn btn-danger"><span><strong>Want A Job</strong></span></button>
         </ul>
@@ -904,97 +1078,127 @@
         </nav>
     </div>
   </header>
-  <section id="download" class="download">
-    <div class="container" data-aos="fade-up">
-      <section class="vh-80" style="background-color: #2779e2;">
-        <div class="container h-100">
-          <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-xl-9">
-      
-              <h1 class="text-white mb-4">Apply for a job</h1>
-      
-              <div class="card" style="border-radius: 15px;">
-                <div class="card-body">
-      
-                  <div class="row align-items-center pt-4 pb-3">
-                    <div class="col-md-3 ps-5">
-      
-                      <h6 class="mb-0">Full name</h6>
-      
-                    </div>
-                    <div class="col-md-9 pe-5">
-      
-                      <input type="text" class="form-control form-control-lg" />
-      
-                    </div>
-                  </div>
-      
-                  <hr class="mx-n3">
-      
-                  <div class="row align-items-center py-3">
-                    <div class="col-md-3 ps-5">
-      
-                      <h6 class="mb-0">Email address</h6>
-      
-                    </div>
-                    <div class="col-md-9 pe-5">
-      
-                      <input type="email" class="form-control form-control-lg" placeholder="example@example.com" />
-      
-                    </div>
-                  </div>
-      
-                  <hr class="mx-n3">
-      
-                  <div class="row align-items-center py-3">
-                    <div class="col-md-3 ps-5">
-      
-                      <h6 class="mb-0">Job Name/Job Id</h6>
-      
-                    </div>
-                    <div class="col-md-9 pe-5">
-      
-                      <input class="form-control" rows="3" placeholder="Job Name or Job Id">
-      
-                    </div>
-                  </div>
-      
-                  <hr class="mx-n3">
-      
-                  <div class="row align-items-center py-3">
-                    <div class="col-md-3 ps-5">
-      
-                      <h6 class="mb-0">Upload CV</h6>
-      
-                    </div>
-                    <div class="col-md-9 pe-5">
-      
-                      <input class="form-control form-control-lg" id="formFileLg" type="file" />
-                      <div class="small text-muted mt-2">Upload your CV/Resume or any other relevant file. Max file
-                        size 50 MB</div>
-      
-                    </div>
-                  </div>
-      
-                  <hr class="mx-n3">
-      
-                  <div class="px-5 py-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Send application</button>
-                  </div>
-      
+  <section id="search" class="search"  style="background-image:url('{% static 'images/jobb.jpg' %}');background-repeat:no-repeat;background-size:cover;">
+    <div class="container" >
+        <div class="section-title">
+            <h1>Search Jobs</h1>
+        </div>
+        <div class="container">
+            <form>
+                <div class="form-row">
+                <div class="col-5 input-group input-group-lg">
+                    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Job Title eg:PHP Developer">
                 </div>
-              </div>
-      
+                <div class="col input-group input-group-lg">
+                    {% comment %} <input type="text" class="form-control" placeholder="Catergory"> {% endcomment %}
+                    <select class="browser-default custom-select">
+                        <option selected>Category</option>
+                        <option value="1">Full Time</option>
+                        <option value="2">Part Time</option>
+                        <option value="3">Internship</option>
+                        <option value="4">Freelance</option>
+                    </select>
+                </div>
+                <div class="col input-group input-group-lg">
+                    <input type="text" class="form-control" placeholder="Location">
+                </div>
+                <div class="col-auto my-0">
+                    <a href="" class="btn btn-danger btn-lg">Search Job</a>
+                </div>
+            </form>
+        </div>
+      </div>
+    </section>
+    <section id="job" class="job" >
+      <div class="container">
+        <div class="main-container">
+          <div class="heading">
+            <h1 class="heading__title"></h1>
+            <p class="heading__credits"><a class="heading__link" target="_blank" href="https://dribbble.com/sl">Search a jobs </a></p>
+          </div>
+          <div class="cards">
+            <div class="card card-1">
+              {% comment %} <div class="card__icon"><i class="fas fa-bolt"></i></div> {% endcomment %}
+              {% comment %} <p class="card__exit"><i class="fas fa-times"></i></p> {% endcomment %}
+              <h2 class="card__title">Web Developer</h2>
+              <img src="{% static 'images/gooo.jpg' %}"  style="height:50px;width:80px;"><br>
+              
+                <p>Experience:0-2year
+                knowledge:HTML,CSS,Python Django<br>
+                Salar:20K-40k Full Time</p>
+                <p>8 vacancies</p>
+              <p class="card__apply">
+                <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+              </p>
             </div>
+            <div class="card card-2">
+              <h2 class="card__title">Web Developer</h2>
+              <img src="{% static 'images/Apple.jpg' %}"  style="height:50px;width:80px;"><br>
+              
+                <p>Experience:0-2year
+                knowledge:HTML,CSS,Python Django<br>
+                Salar:20K-40k Full Time</p>
+                <p>8 vacancies</p>
+              <p class="card__apply">
+                <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+              </p>
+            </div>
+            <div class="card card-3">
+              <h2 class="card__title">Web Developer</h2>
+              <img src="{% static 'images/fbb.jpg' %}"  style="height:50px;width:80px;"><br>
+              
+                <p>Experience:0-2year
+                knowledge:HTML,CSS,Python Django<br>
+                Salar:20K-40k Full Time</p>
+                <p>8 vacancies</p>
+              <p class="card__apply">
+                <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+              </p>
+            </div>
+            <div class="card card-4">
+              <h2 class="card__title">Web Developer</h2>
+              <img src="{% static 'images/ey.jpg' %}"  style="height:50px;width:80px;"><br>
+              
+                <p>Experience:0-2year
+                knowledge:HTML,CSS,Python Django<br>
+                Salar:20K-40k Full Time</p>
+                <p>8 vacancies</p>
+              <p class="card__apply">
+                <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+              </p>
+            </div>
+            <div class="card card-5">
+              <h2 class="card__title">Web Developer</h2>
+              <img src="{% static 'images/ibs.jpg' %}"  style="height:50px;width:80px;"><br>
+              
+                <p>Experience:0-2year
+                 knowledge:HTML,CSS,Python Django<br>
+                Salar:20K-40k Full Time</p>
+                <p>8 vacancies</p>
+              <p class="card__apply">
+                <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+              </p>
+            </div>
+            <div class="card card-1">
+              <h2 class="card__title">Web Developer</h2>
+              <img src="{% static 'images/wipro.jpg' %}"  style="height:50px;width:80px;"><br>
+              
+                <p>Experience:0-2year
+                knowledge:HTML,CSS,Python Django<br>
+                Salar:20K-40k Full Time</p>
+                <p>8 vacancies</p>
+              <p class="card__apply"> 
+                <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+              </p>
+            </div>
+            <button type="button" class="btn btn-danger btn-lg">More Job Vacancies</button>
           </div>
         </div>
-      </section>
+
+
     </div>
-  </section>
-
-
-
-  <footer id="footer">
+</section>
+<footer id="footer">
     <div class="container">
       <h3>Job Portal</h3>
       <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
@@ -1010,8 +1214,8 @@
       </div>
      
     </div>
-    </footer>
-    
+  
+  
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
   <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
